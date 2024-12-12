@@ -6,7 +6,7 @@ def evaluate_password(password):
     length_score = len(password) >= 12
     complexity_score = bool(re.search(r'[A-Z]', password)) and bool(re.search(r'[a-z]', password)) and bool(re.search(r'[0-9]', password)) and bool(re.search(r'[\W_]', password))
     randomness_score = not bool(re.search(r'(.)\1{2,}', password))  # No more than 2 repeated characters
-
+# Return the scores for length, complexity, and randomness
     return length_score, complexity_score, randomness_score
 
 # Function to detect common attack patterns
